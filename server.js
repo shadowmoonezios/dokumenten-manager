@@ -13,7 +13,10 @@ app.use(express.json());
 // Database connection
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true })
   .then(() => console.log('Database successfully connected'))
-  .catch(err => console.error('Error connecting to the database:', err.message));
+  .catch(err => {
+    console.error('Error connecting to the database:', err);
+    process.exit(1); // Exit process with failure
+  });
 
 // Error handling middleware
 app.use((err, req, res, next) => {
