@@ -11,7 +11,7 @@ app.use(express.json());
 
 // Datenbankverbindung
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('Datenbank verbunden'))
+  .then(() => console.log('Datenbank erfolgreich verbunden'))
   .catch(err => console.error('Fehler bei der Datenbankverbindung:', err));
 
 // Beispielroute
