@@ -15,6 +15,12 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
   .then(() => console.log('Database successfully connected'))
   .catch(err => console.error('Error connecting to the database:', err.message));
 
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+
 // Example route
 app.get('/', (req, res) => {
   res.send('Welcome to the Document Manager API!');
