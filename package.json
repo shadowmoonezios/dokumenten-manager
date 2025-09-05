@@ -1,7 +1,7 @@
 {
   "name": "dokumenten-manager",
   "version": "1.0.0",
-  "description": "A web application to manage documents",
+  "description": "A web application designed for efficient document management and collaboration.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
