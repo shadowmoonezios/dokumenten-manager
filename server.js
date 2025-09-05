@@ -12,11 +12,11 @@ app.use(express.json());
 // Datenbankverbindung
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Datenbank verbunden'))
-  .catch(err => console.error('Datenbank Verbindung fehlgeschlagen:', err));
+  .catch(err => console.error('Datenbankverbindung fehlgeschlagen:', err));
 
 // Beispielroute
 app.get('/', (req, res) => {
-  res.send('Willkommen im Dokumenten Manager API!');
+  res.send('Willkommen im Dokumenten-Manager API!');
 });
 
 const PORT = process.env.PORT || 5000;
